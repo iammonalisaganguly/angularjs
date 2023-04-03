@@ -42,5 +42,14 @@ var app=angular.module("myMod",[]);
         {name:"Anita",city:"Burdwan",age:46},
         {name:"Rupam",city:"Burdwan",age:28},
     ];
+
+    $scope.emplo= [
+        {name:"Mona",city:"Burdwan",age:23},
+        {name:"Raj",city:"Burdwan",age:24},
+        {name:"Munna",city:"Burdwan",age:47},  
+        {name:"Anita",city:"Burdwan",age:46},
+        {name:"Rupam",city:"Burdwan",age:28},
+    ];
+
 });
 

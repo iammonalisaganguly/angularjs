@@ -94,7 +94,42 @@
     
 </table>
 
-   </body>
+<br>
+
+<p><input type="checkbox" ng-model="check" > Show</p>
+<div ng-show="check">
+    <h1> This is a Div</h1>
+    <h2> This is a Second Div</h2>
+</div>
+
+<br>
+<p><input type="checkbox" ng-model="check" > Hide</p>
+<div ng-hide="check">
+    <h1> This is a Div</h1>
+    <h2> This is a Second Div</h2>
+</div>
+<p> <input type="checkbox" ng-model="check"> Hide age</p>
+<table border="1">
+   <thead>
+    <tr>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th ng-hide="check">AGE</th>
+    </tr>
+</thead>
+   
+<tbody>
+    <tr ng-repeat="emp in emplo">
+        <td> {{emp.name}}  </td>
+        <td> {{emp.city}}  </td>
+        <td ng-hide="check"> {{emp.age}}  </td>
+    </tr>
+</tbody>
+</table>
+
+
+
+</body>
  
 
 
