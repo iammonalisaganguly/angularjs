@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="myMod" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <script src="module.js"></script>
+</head>
+       
+<body ng-controller="myController" >
+    <ul>
+       <li ng-repeat="item in fruits" >
+           {{item}}
+           </li>
+    </ul>
+
+    <ol>
+       <li ng-repeat="(x,y) in student" >
+           {{x}}={{y}}
+           </li>
+
+
+           <table border="1">
+               <tr>
+                   <th>NAME</th>
+                   <th>CITY</th>
+                   <th>AGE</th>
+                   </tr>
+                   <tr ng-repeat="emp in employee">
+                       <td> {{emp.name}} </td>
+                       <td> {{emp.city}} </td>
+                       <td> {{emp.age}} </td>
+                       </tr> 
+               
+               </table>
+    </ol>
+<!--FILTER : Select a subset of items from an array (item of an array)-->
+
+    <h2> {{name  | lowercase}} </h2>
+    <h2> {{name  | uppercase}} </h2>
+    <h2> {{amount | number:2}} </h2>
+    <h2> {{amount | currency:"&euro;"}} </h2>
+    <h2> {{  mydate  | date:"y"}} </h2> <!-- "y"-- this is for year-->
+    <h2> {{  mydate  | date:"MMMM"}} </h2> <!--"M"-- this is for month-->
+    <h2> {{  mydate  | date:"d"}} </h2> <!--//"d"-- this is for day-->
+    <h2> {{  mydate  | date:"EEEE"}} </h2> <!--//"E"-- this is for ki bar seta--> 
+    <h2> {{  mydate  | date:"dd/MM/yy/EEE/hh/mm/ss/sss/a"}} </h2>     <!-- "H","h","m"-- this is for hour 1st is 24hour formating, 2nd is normal time formating 3rd is for is minute 4th is for second 5th is for milisecond 6th is for ("AM and PM")-->
+<ul>
+    <li ng-repeat="item in names | orderBy:'-'">
+        {{item}}
+    </li>
+</ul>
+
+<table border="1">
+    <tr>
+        <th ng-click="myFunction('name')" >NAME</th>
+        <th ng-click="myFunction('city')">CITY</th>
+        <th ng-click="myFunction('age')">AGE</th>
+    </tr>
+    <tr ng-repeat="emp in employees | orderBy:order">
+        <td> {{emp.name}}  </td>
+        <td> {{emp.city}}  </td>
+        <td> {{emp.age}}  </td>
+    </tr>
+</table>
+
+
+    <input type="text" placeholder="Enter a fruit" ng-model="search" >
+<ul>
+    <li ng-repeat="fruit in fruits | filter:search  ">
+        {{fruit}}
+    </li>
+
+</ul>
+<br>
+<input type="text" placeholder="Enter a student name" ng-model="search" >
+<input type="text" placeholder="Enter a student city" ng-model="city" >
+<table border="2">
+    <tr>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th>AGE</th>
+    </tr>
+
+    <tr ng-repeat="std in students  | filter:search:true ">
+        <!--<tr ng-repeat="std in students  | filter;search ">-->
+       <th> {{std.name}} </th>
+        <th> {{std.city}} </th>
+        <th> {{std.age}} </th>
+
+    </tr>
+    
+</table>
+
+   </body>
+ 
+
+
+
+    </html>

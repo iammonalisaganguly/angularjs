@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html ng-app="myMod" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <script src="module.js"></script>
+<style>
+    /* p{
+        font-size: {{90-40}}px;
+    } */
+
+    p {
+        font-size: 30px;
+    } 
+     body{
+        background-color: {{color}};
+    }
+p{
+    font-size: {{size}}px;
+
+}
+
+</style>
+</head>
+<body >
+
+    <!--ng-app=""/ ng-app starting the angular js . jodi ami duto div a e angular js ar effect dite chay tahole amra ng-app ta k <body> tag ar vitore use korte pari.   r jodi amra chay j amader angular js puro application a e thakuk tahole amra ata l root eliment a dite hobe <html> tag ar vitore -->
+    <!--{{10+30}}  expression of angularjs within the double curly brackets. -->
+
+
+    
+    <div >
+        <p> WELCOME TO ANGULAR JS </p>
+
+        {{5+7}}  <br>
+        {{6+7}}  <br>
+        {{"Hellow i am Monalisa Ganguly this  is my first angularjs code  "}}
+    
+       </div>
+       
+       <div>
+           {{5+7}}  <br>
+           {{6+7}}<br>
+           {{"Hellow i am Monalisa Ganguly this  is my first angularjs code  "}}
+    
+       </div>
+
+       <input type ="text" placeholder="Enter your name" ng-model="name">
+     <br> <br>  
+     {{name}}
+     <h1> Your name is:{{name}} </h1>
+
+     <br> 
+      <h1 ng-bind="name"> </h1>
+
+
+      <input type ="text" placeholder="Enter any color name " ng-model="color">
+      <br>
+      <input type ="text" placeholder="Enter any size " ng-model="size">
+      <p> Welcome to angular js </p>
+       
+      
+      
+      <!--ng-model directive k amra bind korte parbo value r input a varriable dia 
+       with the ng-model directive you can bind the value of an input field to a varriable created in angular js 
+       the ng-model directive binds the value of HTML controls (input, select, textarea) to application data 
+       the ng-bind directive tells angular js to replace the content of an HTML element with the value of a given varriable , or expression 
+       -->
+
+       <textarea ng-model="txt" cols="30" rows="10"></textarea>
+       <br><br>
+       <h2 ng-bind="txt"> </h2>
+
+
+       <select ng-model="emp_name">
+        <option value="Rajesh">Rajesh</option>
+        <option value="Monalisa">Monalisa</option>
+        <option value="Pranoy">Pranoy</option>
+       </select>
+       <br> <br>
+       <h3 ng-bind="emp_name"></h3>
+       <br>
+       <br>
+       <div ng-init="name='Mona'; age=23;">
+        <h2>
+            {{ name }}
+            </h2>
+            <h2 ng-bind="name"> 
+                
+                </h2>
+                <h2 ng-bind="age"> 
+                
+            </h2>
+    
+        
+        </div>
+
+        <br>
+        <br>
+        <div ng-init="colors=['red', 'blue', 'green', 'black']">
+            <h2>{{colors[0]}}</h2>
+            </div>
+            <div ng-init="obj={name:'Mona', age: 23, height:5.3}">
+                <h2>  {{ obj.name }} </h2>
+                <h2>  {{ obj.age }} </h2>
+                <h2>  {{ obj.height }} </h2>
+                <h2 ng-bind="obj.height"  ></h2>                
+                </div>
+                <br>
+                <br>
+                
+        <div ng-init="students=[
+            {name:'Mona',class:'v', gender:'Female'}
+            {name:'Lisa',class:'vi', gender:'Female'}
+            {name:'Raj',class:'vii', gender:'Male'}
+        ]">
+        <h2> {{students[0].name}} </h2>
+            
+    
+    </div>
+    <div ng-controller="myController">
+        <h2> {{name}} </h2>
+        <input type="button" value="Click" ng-click="number = number+1" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-click="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-dblclick="number = number+1" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-mouseover="number = number+1" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-mouseenter="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-mousemove="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="button" value="Click" ng-mouseleave="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="text" ng-focus="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-blur="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-keydown="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-keypress="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-keyup="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    
+
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-copy="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-cut="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-paste="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+        
+        <input type="text"  ng-model="val "  ng-change="myFunction()" >
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+
+    <div ng-controller="myController">
+        
+        <textarea  ng-model="val "  ng-change="myFunction()" ></textarea>
+        <br>
+        <br>
+        <h2> {{number}} </h2>
+    </div>
+
+    <div ng-controller="myController">
+      
+       <select ng-model="val" ng-change="myFunction()" >
+        <option value=""> Select Country</option>
+        <option value="India"> India</option>
+        <option value="America">America</option>
+        <option value="Urope">Urope</option>
+       </select>
+
+        <br>
+        <br>
+        <h2> {{val}} </h2>
+        <h2> {{number}} </h2>
+    </div>
+
+ 
+</body> 
+
+
+
+
+
+
+</html>
