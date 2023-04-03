@@ -115,6 +115,7 @@
         <th>NAME</th>
         <th>CITY</th>
         <th ng-hide="check">AGE</th>
+        <th ng-show="check">AGE</th>
     </tr>
 </thead>
    
@@ -123,9 +124,10 @@
         <td> {{emp.name}}  </td>
         <td> {{emp.city}}  </td>
         <td ng-hide="check"> {{emp.age}}  </td>
+        <td ng-show="check"> ***** </td>
     </tr>
 </tbody>
-</table>
+</table> 
 
 
 
