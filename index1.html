@@ -120,7 +120,7 @@
 </thead>
    
 <tbody>
-    <tr ng-repeat="emp in emplo">
+    <tr ng-repeat="emp in emplo"> 
         <td> {{emp.name}}  </td>
         <td> {{emp.city}}  </td>
         <td ng-hide="check"> {{emp.age}}  </td>
@@ -129,7 +129,8 @@
 </tbody>
 </table> 
 
-
+<div ng-include="'index2.html'"></div>
+<div ng-include="EmpView"></div>
 
 </body>
  
