@@ -20,6 +20,20 @@
 
 <h1>  {{count}}  </h1>
 <h1>  {{dateAndTime | date:"dd-MM-y hh:mm:ss a"}}  </h1>
+<h1>{{name}}</h1>
+<br>
+<input type="text" placeholder="Enter your Name" ng-model="nam">
+<br>
+<br>
+<input type="button" value="Click to See Alert" ng-click="DisplayAlert(nam)">
+
+<br>
+<br>
+<input type="button" value="Click to See Prompt" ng-click="DisplayPrompt()">
+<br>
+<br>
+<input type="button" value="Click to Add" ng-click="Add()">
+
 
     </body>
     </html>

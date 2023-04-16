@@ -1,6 +1,6 @@
 var app=angular.module("myMod",[]);
 
- app.controller("myController", function($scope,$location, $interval){                //$scope is provide model .
+ app.controller("myController", function($scope,$location, $interval, $timeout , $window ){                //$scope is provide model .
     $scope.name = "Monalisa Ganguly"
     $scope.number=0
     $scope.myFunction= function(){
@@ -66,18 +66,37 @@ $scope.protocol=$location.protocol();
 $scope.host=$location.host();
 $scope.port=$location.port();
 
-// $scope.count=0;
-// $interval(function(){
-//     $scope.count++
-// },2000 )
+$scope.count=0;
+$interval(function(){
+    $scope.count++
+},2000 )
 
 $interval(function(){
     $scope.dateAndTime=new Date();
 },1000)
 
+$scope.name="Monalisa Ganguly";
+$timeout(function(){
+    $scope.name= "Function is fired...";
+},4000)
 
-
-
+$scope.DisplayAlert = function(nam){
+    $window.alert("Congratulation you are logged in-"+nam);
+}
+$scope.DisplayPrompt =function(){
+    var fname=$window.prompt("Enter first Name ")
+    var lname=$window.prompt("Enter last Name ")
+    $window.alert("Your full Name is :" +fname+ " "+lname)
+}
+$scope.Add =function(){
+    var num1=parseInt($window.prompt("Enter first Number "))
+    var num2=parseInt($window.prompt("Enter second Number "))
+    $window.alert("Addition result is :" +(num1+num2))
+}
 
 });
+
+// Angular jsincludes window service which refers to the browser window object. 
+// in the Js , window is a global object which includes many built in methods like alert(), prompt() etc.
+// the $window service is a wrapper around window object.
 
